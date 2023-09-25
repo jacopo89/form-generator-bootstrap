@@ -1,0 +1,60 @@
+{
+  "name": "form-generator",
+  "version": "1.0.0",
+  "private": true,
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/lodash": "^4.14.191",
+    "formik": "^2.2.9",
+    "moment": "^2.29.4",
+    "react-bootstrap": "^2.7.0",
+    "react-datepicker": "^4.8.0",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-number-format": "^5.1.3",
+    "react-quill": "^2.0.0",
+    "react-select": "^5.7.0",
+    "react-tag-autocomplete": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.9",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.9.4",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "scripts": {
+    "test": "react-scripts test --rootDir=./tests",
+    "start": "react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
