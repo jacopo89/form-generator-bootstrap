@@ -12,61 +12,58 @@ import FormFieldTest from "./FormFieldTest";
 import FileFieldTest from "./FileFieldTest";
 import NumberFieldTest from "./NumberFieldTest";
 import DateFieldTest from "./DateFieldTest";
-import CollectionFieldTest from "./CollectionFieldTest";
+
 
 function App() {
   const [activeTab, setActiveTab] = useState("text")
 
   return <div className="mx-5 px-5">
-          <FormGeneratorThemeContextProvider theme="bootstrap">
-              <FormGeneratorThemeContext.Consumer>
-                  {
-                      ({theme, setTheme})=>{
-                          return <>
-                              <div>
-                                  <Tabs
-                                      activeKey={activeTab}
-                                      defaultActiveKey="collection"
-                                      onSelect={(k) => {if(k) setActiveTab(k)}}
-                                      className="mb-3"
-                                  >
-                                      <Tab eventKey="text" title="Text">
-                                          <TextFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="number" title="Number">
-                                          <NumberFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="select" title="Select">
-                                          <SelectFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="date" title="Date">
-                                          <DateFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="collection" title="Collection">
-                                          <CollectionFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="dictionary" title="Dictionary">
-                                          <DictionaryFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="tags" title="Tags">
-                                          <TagsFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="embedded" title="Embedded">
-                                          <EmbeddedFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="form" title="Form">
-                                          <FormFieldTest/>
-                                      </Tab>
-                                      <Tab eventKey="file" title="File">
-                                          <FileFieldTest/>
-                                      </Tab>
-                                  </Tabs>
-                              </div>
-                          </>
-                      }
-                  }
-              </FormGeneratorThemeContext.Consumer>
-          </FormGeneratorThemeContextProvider>
+      <FormGeneratorThemeContextProvider theme="bootstrap">
+        <FormGeneratorThemeContext.Consumer>
+          {
+            ({theme, setTheme})=>{
+              return <>
+                <div>
+                  <Tabs
+                      activeKey={activeTab}
+                      defaultActiveKey="form"
+                      onSelect={(k) => {if(k) setActiveTab(k)}}
+                      className="mb-3"
+                  >
+                    <Tab eventKey="text" title="Text">
+                      <TextFieldTest/>
+                    </Tab>
+                    <Tab eventKey="number" title="Number">
+                      <NumberFieldTest/>
+                    </Tab>
+                    <Tab eventKey="select" title="Select">
+                      <SelectFieldTest/>
+                    </Tab>
+                      <Tab eventKey="date" title="Date">
+                          <DateFieldTest/>
+                      </Tab>
+                    <Tab eventKey="dictionary" title="Dictionary">
+                      <DictionaryFieldTest/>
+                    </Tab>
+                    <Tab eventKey="tags" title="Tags">
+                      <TagsFieldTest/>
+                    </Tab>
+                    <Tab eventKey="embedded" title="Embedded">
+                      <EmbeddedFieldTest/>
+                    </Tab>
+                    <Tab eventKey="form" title="Form">
+                      <FormFieldTest/>
+                    </Tab>
+                    <Tab eventKey="file" title="File">
+                      <FileFieldTest/>
+                    </Tab>
+                  </Tabs>
+                </div>
+              </>
+            }
+          }
+        </FormGeneratorThemeContext.Consumer>
+      </FormGeneratorThemeContextProvider>
   </div>
 }
 
