@@ -16,6 +16,9 @@
     "react-select": "^5.7.0",
     "react-tag-autocomplete": "^6.3.0"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@testing-library/react": "^11.2.7",
