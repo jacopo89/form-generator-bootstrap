@@ -1,5 +1,5 @@
 {
-  "name": "form-generator",
+  "name": "form-generator-bootstrap",
   "version": "1.0.0",
   "private": true,
   "module": "dist/esm.js",
@@ -38,15 +38,6 @@
   "scripts": {
     "test": "react-scripts test --rootDir=./tests",
     "start": "react-scripts start"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
