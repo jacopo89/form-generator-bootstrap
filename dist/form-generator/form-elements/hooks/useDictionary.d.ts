@@ -9,6 +9,9 @@ export default function useDictionary({ accessor, initialValues }: useDictionary
     remover: (index: number) => void;
     adder: () => Promise<void> | Promise<import("formik").FormikErrors<import("formik").FormikValues>>;
     getFormGeneratorProvider: (index: number, children: any) => React.FunctionComponentElement<{
+        accessorRoot?: string | undefined;
+        onSubmit?: ((values: any) => void | Promise<any>) | undefined;
+        onChange: (value: any) => void | Promise<void> | Promise<import("formik").FormikErrors<import("formik").FormikValues>>;
         children?: any;
         formDescriptor: FormDescriptor;
         existingValue?: import("formik").FormikValues | undefined;
@@ -16,15 +19,7 @@ export default function useDictionary({ accessor, initialValues }: useDictionary
         existingTouched?: import("formik").FormikTouched<import("formik").FormikValues> | undefined;
         formValue?: import("formik").FormikValues | undefined;
         disable?: boolean | undefined;
-    } & ({
-        accessorRoot?: string | undefined;
-        onSubmit?: undefined;
-        onChange: (value: any) => void | Promise<void> | Promise<import("formik").FormikErrors<import("formik").FormikValues>>;
-    } | {
-        accessorRoot?: undefined;
-        onSubmit?: ((values: any) => void | Promise<any>) | undefined;
-        onChange?: undefined;
-    })>;
+    }>;
     collectionElement: import("../../ElementInterface").GenericElementInterface | undefined;
 };
 export {};

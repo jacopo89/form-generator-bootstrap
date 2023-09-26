@@ -33,7 +33,7 @@ export default function CollectionFieldTest(){
     )
 
     return <div className={"mx-5 px-5"}>
-        <FormGeneratorContextProvider existingValue={values} formDescriptor={formDescriptor} onSubmit={(values)=>{console.log("values",values)}}>
+        <FormGeneratorContextProvider existingValue={values} formDescriptor={formDescriptor} onChange={(values)=>{console.log("values",values)}}>
             <FormGeneratorContext.Consumer>
                 {({values})=>{
                     return <Dictionary/>

@@ -19,6 +19,9 @@ type ConditionalProps = {
 };
 
 type CommonProps = {
+    accessorRoot?:string,
+    onSubmit?: (values:any) => void | Promise<any>;
+    onChange: (value: any) => Promise<void> | Promise<FormikErrors<FormikValues>> | void
     children?:any,
     formDescriptor:FormDescriptor
     existingValue?:FormikValues,
@@ -28,7 +31,7 @@ type CommonProps = {
     disable?: boolean
 }
 
-type Props = CommonProps & ConditionalProps
+type Props = CommonProps
 
 export default function FormGeneratorContextProvider(props:Props){
     const {formValue, formDescriptor, disable=false ,onSubmit, children, existingValue,existingErrors, accessorRoot, onChange} = props
@@ -61,13 +64,13 @@ export default function FormGeneratorContextProvider(props:Props){
     },[existingValue,values])
 
     const updateWhenValuesChange = useCallback(()=>{
-        if(accessorRoot && values!==initialValues){
+        if(values!==initialValues){
             if(values && values!==existingValue){
                 //@ts-ignore
                 onChange(values)
             }
         }
-    },[values, existingValue,accessorRoot,initialValues])
+    },[values, existingValue,initialValues])
 
     useEffect(()=>{
         updateWhenValuesChange()
@@ -113,13 +116,13 @@ export default function FormGeneratorContextProvider(props:Props){
                 // @ts-ignore
                 const array:any[] = values[collectionAccessor];
                 const newArray = array.filter((item,index) => index !== indexToRemove )
-                const newValues = values;
+                const newValues = {...values}
                 // @ts-ignore
                 newValues[collectionAccessor] = newArray;
                 setValues(newValues)
             }
         }else{
-            const newValues = values;
+            const newValues = {...values}
             // @ts-ignore
             delete newValues[accessor]
             setValues(newValues)

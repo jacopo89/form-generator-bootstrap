@@ -12,6 +12,7 @@ import FormFieldTest from "./FormFieldTest";
 import FileFieldTest from "./FileFieldTest";
 import NumberFieldTest from "./NumberFieldTest";
 import DateFieldTest from "./DateFieldTest";
+import CollectionFieldTest from "./CollectionFieldTest";
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
                       onSelect={(k) => {if(k) setActiveTab(k)}}
                       className="mb-3"
                   >
+                      <Tab eventKey="collection" title="Collection">
+                          <CollectionFieldTest/>
+                      </Tab>
                     <Tab eventKey="text" title="Text">
                       <TextFieldTest/>
                     </Tab>

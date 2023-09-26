@@ -32,13 +32,13 @@ export default function FormGeneratorContextProvider(props) {
         }
     }, [existingValue, values]);
     const updateWhenValuesChange = useCallback(() => {
-        if (accessorRoot && values !== initialValues) {
+        if (values !== initialValues) {
             if (values && values !== existingValue) {
                 //@ts-ignore
                 onChange(values);
             }
         }
-    }, [values, existingValue, accessorRoot, initialValues]);
+    }, [values, existingValue, initialValues]);
     useEffect(() => {
         updateWhenValuesChange();
     }, [values]);
@@ -76,14 +76,14 @@ export default function FormGeneratorContextProvider(props) {
                 // @ts-ignore
                 const array = values[collectionAccessor];
                 const newArray = array.filter((item, index) => index !== indexToRemove);
-                const newValues = values;
+                const newValues = Object.assign({}, values);
                 // @ts-ignore
                 newValues[collectionAccessor] = newArray;
                 setValues(newValues);
             }
         }
         else {
-            const newValues = values;
+            const newValues = Object.assign({}, values);
             // @ts-ignore
             delete newValues[accessor];
             setValues(newValues);

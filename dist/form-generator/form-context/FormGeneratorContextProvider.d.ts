@@ -1,15 +1,9 @@
 import { FormikErrors, FormikTouched, FormikValues } from "formik";
 import FormDescriptor from "../form-descriptor/FormDescriptor";
-declare type ConditionalProps = {
-    accessorRoot?: string;
-    onSubmit?: never;
-    onChange: (value: any) => Promise<void> | Promise<FormikErrors<FormikValues>> | void;
-} | {
-    accessorRoot?: never;
-    onSubmit?: (values: any) => void | Promise<any>;
-    onChange?: never;
-};
 declare type CommonProps = {
+    accessorRoot?: string;
+    onSubmit?: (values: any) => void | Promise<any>;
+    onChange: (value: any) => Promise<void> | Promise<FormikErrors<FormikValues>> | void;
     children?: any;
     formDescriptor: FormDescriptor;
     existingValue?: FormikValues;
@@ -18,6 +12,6 @@ declare type CommonProps = {
     formValue?: FormikValues | undefined;
     disable?: boolean;
 };
-declare type Props = CommonProps & ConditionalProps;
+declare type Props = CommonProps;
 export default function FormGeneratorContextProvider(props: Props): JSX.Element;
 export {};
