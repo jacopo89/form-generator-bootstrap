@@ -33,12 +33,11 @@ export default function FormGeneratorContextProvider(props) {
     }, [existingValue, values]);
     const updateWhenValuesChange = useCallback(() => {
         if (values !== initialValues) {
-            if (values && values !== existingValue) {
-                //@ts-ignore
+            if (onChange && values && values !== existingValue) {
                 onChange(values);
             }
         }
-    }, [values, existingValue, initialValues]);
+    }, [onChange, values, existingValue, initialValues]);
     useEffect(() => {
         updateWhenValuesChange();
     }, [values]);
