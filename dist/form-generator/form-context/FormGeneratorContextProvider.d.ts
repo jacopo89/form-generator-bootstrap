@@ -3,7 +3,7 @@ import FormDescriptor from "../form-descriptor/FormDescriptor";
 declare type CommonProps = {
     accessorRoot?: string;
     onSubmit?: (values: any) => void | Promise<any>;
-    onChange: (value: any) => Promise<void> | Promise<FormikErrors<FormikValues>> | void;
+    onChange?: (value: any) => Promise<void> | Promise<FormikErrors<FormikValues>> | void;
     children?: any;
     formDescriptor: FormDescriptor;
     existingValue?: FormikValues;

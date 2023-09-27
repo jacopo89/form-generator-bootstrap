@@ -11,7 +11,7 @@ export default function useDictionary({ accessor, initialValues }: useDictionary
     getFormGeneratorProvider: (index: number, children: any) => React.FunctionComponentElement<{
         accessorRoot?: string | undefined;
         onSubmit?: ((values: any) => void | Promise<any>) | undefined;
-        onChange: (value: any) => void | Promise<void> | Promise<import("formik").FormikErrors<import("formik").FormikValues>>;
+        onChange?: ((value: any) => void | Promise<void> | Promise<import("formik").FormikErrors<import("formik").FormikValues>>) | undefined;
         children?: any;
         formDescriptor: FormDescriptor;
         existingValue?: import("formik").FormikValues | undefined;
