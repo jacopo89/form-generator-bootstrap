@@ -51,7 +51,7 @@ export default function TagsFormField(props:TagsElementInterface){
 
     return <div>
         <Form.Label>{Header}</Form.Label>
-        <ReactTags suggestions={suggestions} minQueryLength={0} tags={tags} allowNew onDelete={onTagDelete} onAddition={onTagAddition} placeholderText={Header} />
+        <ReactTags maxSuggestionsLength={options.length} suggestions={suggestions} minQueryLength={0} tags={tags} allowNew onDelete={onTagDelete} onAddition={onTagAddition} placeholderText={Header} />
         <span style={{visibility: hasError ? "visible": "hidden"}} className={"small text-danger"}>{nestedError ?? "error"}</span>
     </div>
 }

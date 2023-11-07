@@ -43,5 +43,5 @@ export default function TagsFormField(props) {
             name: op.label
         };
     });
-    return _jsxs("div", { children: [_jsx(Form.Label, { children: Header }, void 0), _jsx(ReactTags, { suggestions: suggestions, minQueryLength: 0, tags: tags, allowNew: true, onDelete: onTagDelete, onAddition: onTagAddition, placeholderText: Header }, void 0), _jsx("span", Object.assign({ style: { visibility: hasError ? "visible" : "hidden" }, className: "small text-danger" }, { children: nestedError !== null && nestedError !== void 0 ? nestedError : "error" }), void 0)] }, void 0);
+    return _jsxs("div", { children: [_jsx(Form.Label, { children: Header }, void 0), _jsx(ReactTags, { maxSuggestionsLength: options.length, suggestions: suggestions, minQueryLength: 0, tags: tags, allowNew: true, onDelete: onTagDelete, onAddition: onTagAddition, placeholderText: Header }, void 0), _jsx("span", Object.assign({ style: { visibility: hasError ? "visible" : "hidden" }, className: "small text-danger" }, { children: nestedError !== null && nestedError !== void 0 ? nestedError : "error" }), void 0)] }, void 0);
 }

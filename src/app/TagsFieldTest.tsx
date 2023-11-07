@@ -37,7 +37,17 @@ export default function TagsFieldTest(){
 }
 
 const TextElement= () => {
+    const options = [
+        {label:"VALORE 1", value:"Valore 1"},
+        {label:"VALORE 2", value:"Valore 2"},
+        {label:"VALORE 3", value:"Valore 3"},
+        {label:"VALORE 4", value:"Valore 4"},
+        {label:"VALORE 5", value:"Valore 5"},
+        {label:"VALORE 6", value:"Valore 6"},
+        {label:"VALORE 7", value:"Valore 7"},
+        {label:"VALORE 8", value:"Valore 8"},
+    ]
     return <>
-        <FormElement accessor="companyName"/>
+        <FormElement accessor="companyName" options={options}/>
     </>
 }
