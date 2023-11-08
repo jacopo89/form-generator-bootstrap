@@ -17,6 +17,7 @@ import FloatFormField from "./fields/FloatFormField";
 import PriceFormField from "./fields/PriceFormField";
 import DictionaryFormField from "./fields/DictionaryFormField";
 import FormFormField from "./fields/FormFormField";
+import TextareaFormField from "./fields/TextareaFormField";
 export default function BootstrapFormElementGenerator(props) {
     const { type } = props;
     switch (type) {
@@ -69,6 +70,9 @@ export default function BootstrapFormElementGenerator(props) {
         }
         case "form": {
             return _jsx(FormFormField, Object.assign({}, props), void 0);
+        }
+        case "textarea": {
+            return _jsx(TextareaFormField, Object.assign({}, props), void 0);
         }
     }
     return _jsx(_Fragment, {}, void 0);

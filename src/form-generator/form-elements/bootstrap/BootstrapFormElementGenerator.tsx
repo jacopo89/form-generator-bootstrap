@@ -19,6 +19,7 @@ import PriceFormField from "./fields/PriceFormField";
 import DictionaryFormField from "./fields/DictionaryFormField";
 import {GenericFormElementInterface} from "../FormElementGenerator";
 import FormFormField from "./fields/FormFormField";
+import TextareaFormField from "./fields/TextareaFormField";
 
 
 export default function BootstrapFormElementGenerator(props: GenericFormElementInterface) {
@@ -73,6 +74,9 @@ export default function BootstrapFormElementGenerator(props: GenericFormElementI
         }
         case "form":{
             return <FormFormField {...props} />
+        }
+        case "textarea":{
+            return <TextareaFormField {...props} />
         }
     }
     return <></>

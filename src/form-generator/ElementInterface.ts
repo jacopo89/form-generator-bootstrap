@@ -1,7 +1,7 @@
 import {SelectOption} from "./form-elements/interfaces/SelectElementInterface";
 import {RadioOption} from "./form-elements/interfaces/RadioElementInterface";
 
-export type ElementType  = "text" | "number" | "select" | "radio" | "checkbox" | "file" | "wysiwyg" | "tags" | "collection" | "embedded" | "date" | "countries" | "password" | "float" | "price" | "tel" | "dictionary"| "switch" | "form"
+export type ElementType  = "text" | "number" | "select" | "radio" | "checkbox" | "file" | "wysiwyg" | "tags" | "collection" | "embedded" | "date" | "countries" | "password" | "float" | "price" | "tel" | "dictionary"| "switch" | "form" | "textarea"
 export type FileType = "*" | "image/*" | "application/*" | "application/pdf"
 
 export default interface ElementInterface{
