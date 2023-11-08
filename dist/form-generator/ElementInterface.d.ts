@@ -10,6 +10,9 @@ export default interface ElementInterface {
 export interface TextElementInterface extends ElementInterface {
     type: "text";
 }
+export interface TextareaElementInterface extends ElementInterface {
+    type: "textarea";
+}
 export interface CheckboxElementInterface extends ElementInterface {
     type: "checkbox";
 }
@@ -76,5 +79,5 @@ export interface SwitchElementInterface extends ElementInterface {
 export interface FormElementInterface extends ElementInterface {
     type: "form";
 }
-export declare type GenericElementInterface = TextElementInterface | SelectElementInterface | CheckboxElementInterface | RadioElementInterface | WYSIWYGElementInterface | TagsElementInterface | NumberElementInterface | CollectionElementInterface | EmbeddedElementInterface | FileElementInterface | DateElementInterface | CountriesElementInterface | PasswordElementInterface | FloatElementInterface | PriceElementInterface | TelephoneElementInterface | DictionaryElementInterface | SwitchElementInterface | FormElementInterface;
+export declare type GenericElementInterface = TextElementInterface | SelectElementInterface | CheckboxElementInterface | RadioElementInterface | WYSIWYGElementInterface | TagsElementInterface | NumberElementInterface | CollectionElementInterface | EmbeddedElementInterface | FileElementInterface | DateElementInterface | CountriesElementInterface | PasswordElementInterface | FloatElementInterface | PriceElementInterface | TelephoneElementInterface | DictionaryElementInterface | SwitchElementInterface | FormElementInterface | TextareaElementInterface;
 export declare type FormElements = GenericElementInterface[];
