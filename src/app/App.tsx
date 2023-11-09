@@ -13,6 +13,7 @@ import FileFieldTest from "./FileFieldTest";
 import NumberFieldTest from "./NumberFieldTest";
 import DateFieldTest from "./DateFieldTest";
 import CollectionFieldTest from "./CollectionFieldTest";
+import TextareaFieldTest from "./TextareaFieldTest";
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
                     <Tab eventKey="text" title="Text">
                       <TextFieldTest/>
                     </Tab>
+                      <Tab eventKey="textarea" title="Textarea">
+                          <TextareaFieldTest/>
+                      </Tab>
                     <Tab eventKey="number" title="Number">
                       <NumberFieldTest/>
                     </Tab>

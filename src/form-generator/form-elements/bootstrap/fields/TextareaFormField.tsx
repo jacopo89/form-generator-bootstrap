@@ -11,7 +11,7 @@ export default function TextareaFormField(props:TextareaElementInterface){
 
     return <Form.Group as={"div"} style={{position:"relative"}}>
         {label !== false && <Form.Label>{label ?? Header}</Form.Label>}
-        <Form.Control isInvalid={nestedTouched && nestedError!==undefined} disabled={disable} type="textarea" name={accessor} placeholder={placeholder} value={getNestedValue(accessor,values)} onChange={(e)=>{
+        <Form.Control as="textarea" isInvalid={nestedTouched && nestedError!==undefined} disabled={disable} name={accessor} placeholder={placeholder} value={getNestedValue(accessor,values)} onChange={(e)=>{
             setFieldValue(e.target.value)
         }} />
         <Form.Control.Feedback
