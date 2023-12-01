@@ -11,7 +11,9 @@ const companyFormElements:FormElements = [
     {
         accessor:"companyName",
         type:"tags",
-        Header:"Company name"
+        Header:"Company name",
+        minResults:1,
+        maxResults:3
     }
 ]
 const initialValues = {

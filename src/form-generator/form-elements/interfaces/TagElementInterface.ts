@@ -7,5 +7,7 @@ export interface Tag{
 
 export interface TagsElementInterface extends BasicFormElementInterface{
     type:"tags"
-    options:SelectOption[]
+    options:SelectOption[],
+    minResults:number
+    maxResults:number
 }

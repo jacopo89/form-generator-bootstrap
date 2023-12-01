@@ -35,6 +35,8 @@ export interface WYSIWYGElementInterface extends ElementInterface {
 }
 export interface TagsElementInterface extends ElementInterface {
     type: "tags";
+    minResults?: number;
+    maxResults?: number;
 }
 export interface NumberElementInterface extends ElementInterface {
     type: "number";

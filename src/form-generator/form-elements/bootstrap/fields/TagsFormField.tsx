@@ -7,7 +7,7 @@ import {Form} from "react-bootstrap";
 //import "../tagsStyle.css"
 
 export default function TagsFormField(props:TagsElementInterface){
-    const {type,options=[],values, errors, touched,setFieldValue,accessor,Header} = props
+    const {type,minResults = 0, maxResults=undefined, options=[],values, errors, touched,setFieldValue,accessor,Header} = props
 
     const [tags, setTags] = useState<Tag[]>([])
     const nestedError = getNestedValue(accessor,errors)
@@ -49,9 +49,13 @@ export default function TagsFormField(props:TagsElementInterface){
         }
     })
 
+    const onBlur= (e:any) =>{
+        console.log(e)
+    }
+
     return <div>
         <Form.Label>{Header}</Form.Label>
-        <ReactTags maxSuggestionsLength={options.length} suggestions={suggestions} minQueryLength={0} tags={tags} allowNew onDelete={onTagDelete} onAddition={onTagAddition} placeholderText={Header} />
+        <ReactTags maxSuggestionsLength={options.length} addOnBlur suggestions={suggestions} minQueryLength={minResults} tags={tags} allowNew={maxResults ? tags.length < maxResults : true} onDelete={onTagDelete} onAddition={onTagAddition} placeholderText={Header} />
         <span style={{visibility: hasError ? "visible": "hidden"}} className={"small text-danger"}>{nestedError ?? "error"}</span>
     </div>
 }

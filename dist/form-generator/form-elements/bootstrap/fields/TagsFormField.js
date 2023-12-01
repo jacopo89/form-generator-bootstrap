@@ -6,7 +6,7 @@ import { getNestedValue } from "../../utils/form-generator-utils";
 import { Form } from "react-bootstrap";
 //import "../tagsStyle.css"
 export default function TagsFormField(props) {
-    const { type, options = [], values, errors, touched, setFieldValue, accessor, Header } = props;
+    const { type, minResults = 0, maxResults = undefined, options = [], values, errors, touched, setFieldValue, accessor, Header } = props;
     const [tags, setTags] = useState([]);
     const nestedError = getNestedValue(accessor, errors);
     const nestedTouched = getNestedValue(accessor, touched);
@@ -43,5 +43,8 @@ export default function TagsFormField(props) {
             name: op.label
         };
     });
-    return _jsxs("div", { children: [_jsx(Form.Label, { children: Header }, void 0), _jsx(ReactTags, { maxSuggestionsLength: options.length, suggestions: suggestions, minQueryLength: 0, tags: tags, allowNew: true, onDelete: onTagDelete, onAddition: onTagAddition, placeholderText: Header }, void 0), _jsx("span", Object.assign({ style: { visibility: hasError ? "visible" : "hidden" }, className: "small text-danger" }, { children: nestedError !== null && nestedError !== void 0 ? nestedError : "error" }), void 0)] }, void 0);
+    const onBlur = (e) => {
+        console.log(e);
+    };
+    return _jsxs("div", { children: [_jsx(Form.Label, { children: Header }, void 0), _jsx(ReactTags, { maxSuggestionsLength: options.length, addOnBlur: true, suggestions: suggestions, minQueryLength: minResults, tags: tags, allowNew: maxResults ? tags.length < maxResults : true, onDelete: onTagDelete, onAddition: onTagAddition, placeholderText: Header }, void 0), _jsx("span", Object.assign({ style: { visibility: hasError ? "visible" : "hidden" }, className: "small text-danger" }, { children: nestedError !== null && nestedError !== void 0 ? nestedError : "error" }), void 0)] }, void 0);
 }
