@@ -18,6 +18,7 @@ import PriceFormField from "./fields/PriceFormField";
 import DictionaryFormField from "./fields/DictionaryFormField";
 import FormFormField from "./fields/FormFormField";
 import TextareaFormField from "./fields/TextareaFormField";
+import SwitchFormField from "./fields/SwitchFormField";
 export default function BootstrapFormElementGenerator(props) {
     const { type } = props;
     switch (type) {
@@ -74,6 +75,8 @@ export default function BootstrapFormElementGenerator(props) {
         case "textarea": {
             return _jsx(TextareaFormField, Object.assign({}, props), void 0);
         }
+        case "switch":
+            return _jsx(SwitchFormField, Object.assign({}, props), void 0);
     }
     return _jsx(_Fragment, {}, void 0);
 }

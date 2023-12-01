@@ -20,6 +20,7 @@ import DictionaryFormField from "./fields/DictionaryFormField";
 import {GenericFormElementInterface} from "../FormElementGenerator";
 import FormFormField from "./fields/FormFormField";
 import TextareaFormField from "./fields/TextareaFormField";
+import SwitchFormField from "./fields/SwitchFormField";
 
 
 export default function BootstrapFormElementGenerator(props: GenericFormElementInterface) {
@@ -78,6 +79,8 @@ export default function BootstrapFormElementGenerator(props: GenericFormElementI
         case "textarea":{
             return <TextareaFormField {...props} />
         }
+        case "switch":
+            return <SwitchFormField {...props} />
     }
     return <></>
 }
